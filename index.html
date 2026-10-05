@@ -34,7 +34,7 @@
             <div class="bg-white p-5 rounded-3xl shadow-sm border border-green-100 input-card">
                 <div class="flex justify-between items-center border-b border-green-100 pb-3 mb-4">
                     <div class="flex-1 flex justify-center ml-16">
-                        <h1 class="text-base font-bold text-slate-800 flex items-center gap-2">🌿 Thông báo Duy Tân</h1>
+                        <h1 class="text-base font-bold text-slate-800 flex items-center gap-2">🌿 Thông báo</h1>
                     </div>
                     <div class="flex gap-2">
                         <button onclick="pasteText()" class="text-[10px] font-bold bg-blue-50 text-blue-600 px-3 py-1.5 rounded-full hover:bg-blue-600 hover:text-white transition-all">📋 DÁN</button>
@@ -78,17 +78,17 @@
         const contentInput = document.getElementById('contentInput');
         const charCountDisp = document.getElementById('charCount');
         const wordCountDisp = document.getElementById('wordCount');
-        const WATERMARK_TEXT = "https://t.me/Dai_Hoc_Duy_Tan";
+        const WATERMARK_TEXT = "t.me/s/Dai_Hoc_Duy_Tan";
 
         function clearAll() { 
-            titleInput.value = "Thông báo"; contentInput.value = ""; draw(); 
+            titleInput.value = ""; contentInput.value = ""; draw(); 
         }
 
         async function pasteText() {
             try {
                 const text = await navigator.clipboard.readText();
                 contentInput.value = text; draw();
-            } catch (err) { alert("Hãy cấp quyền Clipboard để dán!"); }
+            } catch (err) { alert("Hãy cấp quyền để dán!"); }
         }
 
         function draw() {
@@ -143,7 +143,7 @@
             ctx.fillStyle = "#059669";
             ctx.fillRect(0, 0, canvas.width, 70); ctx.fillRect(0, 930, canvas.width, 70);
             ctx.fillStyle = "white"; ctx.font = "bold 34px Arial";
-            ctx.fillText("🎓 DTU Official Community 🌿", canvas.width/2, 48);
+            ctx.fillText("🎓 DTU 🌿", canvas.width/2, 48);
             ctx.font = "24px Arial"; ctx.fillText(WATERMARK_TEXT, canvas.width/2, 975);
             ctx.fillStyle = "#065f46";
             ctx.beginPath(); ctx.arc(canvas.width/2, 125, 18, 0, Math.PI * 2); ctx.fill();
